@@ -29,10 +29,24 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
+
+/* Default dark mode */
+.dark-mode {
+  background-color: #232323;
+  color: white;
+}
+
+/* Light mode */
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
 .container p {
   font-size: 3em;
   font-weight: lighter;
 }
+
 .container .button {
   width: 13em;
   height: 6em;
