@@ -1,0 +1,59 @@
+:root {
+  --background-color: #232323;
+  --text-color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    display: grid;
+    place-content: center;
+    transition: background-color 0.3s;
+}
+
+.container {
+    min-width: 100vw;
+    height: 100vh;
+    display: flex;
+    gap: 3em;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+.container p {
+  font-size: 3em;
+  font-weight: lighter;
+}
+.container .button {
+  width: 13em;
+  height: 6em;
+  background-color: #2f2f2f;
+  border-radius: 5em;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.container .button .handle {
+  background-color: white;
+  width: 4.5em;
+  height: 4.5em;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+  left: 6px;
+  transition: transform 0.3s;
+}
+
+.move-right {
+  transform: translateX(72px);
+}
