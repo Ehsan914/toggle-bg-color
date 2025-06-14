@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import "../style.css"
 
 
@@ -7,19 +7,20 @@ const ToggleBGColor = () => {
     const [textColor, setTextColor] = useState('white');
     const [backgroundColor, setBackgroundColor] = useState("#232323")
 
+    const handleRef = useRef(null);
+    
     const handleClick = () => {
-        const handle = document.getElementById('handle')
         mode === "Dark" ? (setBackgroundColor("white"), setTextColor("black"),
-         setMode("Light"), handle.classList.add('move-right'))
+         setMode("Light"), handleRef.current.classList.add('move-right'))
         : (setBackgroundColor("#232323"), setTextColor("white"),
-         setMode("Dark"), handle.classList.remove('move-right'))
+         setMode("Dark"), handleRef.current.classList.remove('move-right'))
     }
 
     return (
         <div className="container" style={{ backgroundColor, color: textColor }}>
             <p>Dark</p>
             <div className="button" id="button" onClick={handleClick}>
-                <div className="handle" id="handle"></div>
+                <div className="handle" ref={handleRef}></div>
             </div>
             <p>Light</p>
         </div>
